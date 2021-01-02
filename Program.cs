@@ -13,6 +13,8 @@ namespace PDFBuilerExample
         {
 
             Document doc = new Document(new Rectangle(595, 842), 0, 0, 5, 5);
+            if (!Directory.Exists(@"c:\temp\"))
+                Directory.CreateDirectory(@"c:\temp\");
             string filePath = @"C:\temp\";
             filePath += "builder.pdf";
             var fileStream = new FileStream(filePath, FileMode.Create);
